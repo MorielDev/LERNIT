@@ -7,6 +7,7 @@ import Content2 from "./components/Content2";
 import Plan from "./components/Plan";
 import CustomerLogo from "./components/CustomerLogo";
 import ToolsPotential from "./components/ToolsPotential";
+import Trust from "./components/Trust";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <HomeSection />
       <CustomerLogo />
       <ToolsPotential />
+      <Trust />
       <Content2 />
       <Plan />
       <Content />
