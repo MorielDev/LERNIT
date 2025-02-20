@@ -22,7 +22,7 @@ export default function ToolsPotential() {
           {benefits1.map((benefit1, index) => (
             <li key={index} className="flex items-center gap-[0.625rem]">
               <Image
-                src="/check-circle.svg"
+                src="/check-circle.png"
                 height={20}
                 width={20}
                 alt="check"
