@@ -19,7 +19,7 @@ export default function HomeSection() {
         </div>
       </div>
 
-      <div className="w-[448px] ">
+      <div className=" ">
         <Image
           src="/Right Content.svg"
           height={450}
