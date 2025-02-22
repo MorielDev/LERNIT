@@ -1,5 +1,5 @@
-import Header from "./components/Header";
-import HomeSection from "./components/HomeSection";
+import Header from "./components/Navigation/Header";
+import HomeSection from "./pages/home";
 import Footer from "./components/Footer";
 import Content from "./components/Content";
 import './globals.css';
@@ -8,12 +8,16 @@ import Plan from "./components/Plan";
 import CustomerLogo from "./components/CustomerLogo";
 import ToolsPotential from "./components/ToolsPotential";
 import Trust from "./components/Trust";
+import HowITWorks from "./pages/how-it-works";
+import Rewards from "./pages/rewards";
 
 export default function Home() {
   return (
     <div className="">
       <Header />
       <HomeSection />
+      <HowITWorks/>
+      <Rewards/>
       <CustomerLogo />
       <ToolsPotential />
       <Trust />
