@@ -10,6 +10,8 @@ import ToolsPotential from "./components/ToolsPotential";
 import Trust from "./components/Trust";
 import HowITWorks from "./pages/how-it-works";
 import Rewards from "./pages/rewards";
+import Testimonials from "./pages/testimonials";
+import FAQ from "./components/FAQ";
 
 export default function Home() {
   return (
@@ -18,12 +20,8 @@ export default function Home() {
       <HomeSection />
       <HowITWorks/>
       <Rewards/>
-      <CustomerLogo />
-      <ToolsPotential />
-      <Trust />
-      <Content2 />
-      <Plan />
-      <Content />
+      <Testimonials/>
+      <FAQ/>
       <Footer />
     </div>
   );
