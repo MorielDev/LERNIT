@@ -1,9 +1,5 @@
+import { PrimaryButtonProps } from '@/app/data/list';
 import React from 'react';
-
-interface PrimaryButtonProps {
-    placeholder: React.ReactNode;
-    primary: boolean;
-}
 
 export default function PrimaryButton({ placeholder, primary }: PrimaryButtonProps) {
     return (

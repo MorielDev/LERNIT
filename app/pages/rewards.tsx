@@ -1,45 +1,19 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { IoIosArrowRoundForward } from "react-icons/io";
 import SecondaryButton from "../components/Buttons/SecondaryButton";
-import cash from "../../public/animations/cash.json";
-import discount from "../../public/animations/discount.json";
-import nft from "../../public/animations/cash.json";
-import gamification from "../../public/animations/gamification.json";
 import Lottie from "lottie-react";
 import { MdOutlineArrowForward } from "react-icons/md";
+import HeaderText from "../components/Text/HeaderText";
+import { rewards } from "../data/arrays";
 
-const rewards = [
-    {
-        title: "💵 Cash",
-        description: "Withdraw via Opay, PayPal, or bank transfer.",
-        animations: cash,
-    },
-    {
-        title: "🛍️ Discounts",
-        description: "20% off Jumia, free MTN data bundles, Coursera coupons.",
-        animations: discount,
-    },
-    {
-        title: "🎖️ NFTs & Certifications",
-        description: "Earn tradeable NFTs like 'Blockchain Basics' after 30 hours.",
-        animations: cash,
-    },
-    {
-        title: "🔥 Gamification",
-        description:
-            "Compete on the leaderboard and unlock badges like 'Weekend Warrior'.",
-        animations: gamification,
-    },
-];
 
 export default function Rewards() {
     const [activeTab, setActiveTab] = useState(0);
 
     return (
-        <section className="bg-backgroundColor py-12 px-6 h-screen w-full">
-            <h2 className="text-3xl font-bold text-darkGray text-center mb-8">💰 What Can You Earn?</h2>
+        <section className="bg-backgroundColor px-6 h-screen w-full pt-8 pb-16">
+            <HeaderText placeholder="💰 What Can You Earn?" />
 
             {/* Tab Navigation */}
             <div className="flex justify-center gap-8 mb-10">

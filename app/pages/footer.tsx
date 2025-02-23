@@ -1,49 +1,6 @@
-import { FaDiscord, FaDribbble, FaFacebook, FaGithub, FaXTwitter } from "react-icons/fa6";
 import Logo from "../components/logo/logo";
+import { footerSections, socialIcons } from "../data/arrays";
 
-const footerSections = [
-    {
-        title: "Company",
-        links: [
-            { name: "How It Works", href: "#" },
-            { name: "Rewards", href: "#" },
-            { name: "Testimonials", href: "#" },
-            { name: "FAQ", href: "#" },
-        ],
-    },
-    {
-        title: "Help center",
-        links: [
-            { name: "Discord Server", href: "#" },
-            { name: "Twitter", href: "#" },
-            { name: "Facebook", href: "#" },
-            { name: "Contact Us", href: "#" },
-        ],
-    },
-    {
-        title: "Legal",
-        links: [
-            { name: "Privacy Policy", href: "#" },
-            { name: "Licensing", href: "#" },
-            { name: "Terms & Conditions", href: "#" },
-        ],
-    },
-    {
-        title: "Download",
-        links: [
-            { name: "iOS", href: "#" },
-            { name: "Android", href: "#" },
-        ],
-    },
-];
-
-const socialIcons = [
-    { icon: FaFacebook, label: "Facebook page", href: "#" },
-    { icon: FaDiscord, label: "Discord community", href: "#" },
-    { icon: FaXTwitter, label: "Twitter page", href: "#" },
-    { icon: FaGithub, label: "GitHub account", href: "#" },
-    { icon: FaDribbble, label: "Dribbble account", href: "#" },
-];
 
 export default function Footer() {
     return (

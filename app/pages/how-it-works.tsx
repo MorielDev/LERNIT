@@ -3,40 +3,15 @@
 import { motion } from "framer-motion";
 import { earnAnimation, goalAnimation, studyAnimation } from '../components/animations/animations';
 import Lottie from "lottie-react";
-import earnData from '../../public/animations/anim2.json';
-import goalData from '../../public/animations/goal.json';
-import studyData from '../../public/animations/study.json';
-import redeemData from '../../public/animations/reward.json';
 import { IoIosArrowRoundForward } from "react-icons/io";
 import CTAButton from "../components/Buttons/CTAButton";
+import { steps } from "../data/arrays";
 
-const steps = [
-    {
-        title: "Set Goals",
-        description: "Choose subjects (coding, math, etc.) and daily targets. Customize your study plan to match your learning style and pace. Track progress in real-time and adjust goals as you improve.",
-        animation: goalData,
-    },
-    {
-        title: "Study & Verify",
-        description: "Use our app, offline time-lapse, or screen recording. AI confirms your effort by analyzing your study patterns and validating your focus. Peer reviews further ensure fairness and transparency.",
-        animation: studyData,
-    },
-    {
-        title: "Earn EDU Coins",
-        description: "1 hour = 10 EDU Coins. Bonus coins for streaks and quizzes! Boost earnings with weekly challenges, group study sessions, and special events. The more you stay consistent, the more you earn.",
-        animation: earnData
-    },
-    {
-        title: "Redeem Rewards",
-        description: "Cash out, grab discounts, or unlock NFTs. Your choice! Exchange EDU Coins for real-life benefits—gift cards, learning resources, and exclusive NFT badges that showcase your academic milestones.",
-        animation: redeemData,
-    },
-];
 
 
 export default function HowItWorks() {
     return (
-        <section className="bg-backgroundColor min-h-screen py-16 px-20">
+        <section className="bg-backgroundColor min-h-screen pt-8 pb-16 px-20">
             {/* Title */}
             <motion.h1
                 initial={{ opacity: 0, y: -20 }}

@@ -1,10 +1,5 @@
+import { SecondaryButtonProps } from '@/app/data/list';
 import React from 'react';
-
-interface SecondaryButtonProps {
-    placeholder: React.ReactNode;
-    primary: boolean;
-    children: React.ReactNode;
-}
 
 export default function SecondaryButton({ placeholder, primary, children }: SecondaryButtonProps) {
     return (

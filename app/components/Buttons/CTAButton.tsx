@@ -1,10 +1,8 @@
+import { CTAButtonProps } from '@/app/data/list';
 import { motion } from 'framer-motion';
 import React from 'react';
 import { MdOutlineArrowForward } from 'react-icons/md';
 
-interface CTAButtonProps {
-    placeholder: React.ReactNode;
-}
 
 export default function CTAButton({ placeholder }: CTAButtonProps) {
     return (
