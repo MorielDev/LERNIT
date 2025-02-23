@@ -28,13 +28,13 @@ export default function GamifiedHook() {
 
     return (
         <div className="flex flex-col items-start py-6 bg-backgrouncColor">
-            <motion.div animate={controls} className="text-3xl font-bold text-primary">
+            <motion.div animate={controls} className="text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-3xl font-bold text-primary">
                 🎓 Join {studentCount.toLocaleString()}+ students already earning!
             </motion.div>
 
             {/* Interactive Calculator */}
-            <div className="mt-8 w-full max-w-lg">
-                <label htmlFor="hours" className="block text-lg font-medium text-darkGray mb-4">
+            <div className="mt-4 md:mt-8 lg:mt-8 xl:mt-8 2xl:mt-8 w-full max-w-lg">
+                <label htmlFor="hours" className="block text-lg md: font-medium text-darkGray mb-4">
                     How many hours do you study per week?
                 </label>
                 <input
