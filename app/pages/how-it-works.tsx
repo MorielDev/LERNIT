@@ -12,25 +12,26 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 const steps = [
     {
         title: "Set Goals",
-        description: "Choose subjects (coding, math, etc.) and daily targets.",
+        description: "Choose subjects (coding, math, etc.) and daily targets. Customize your study plan to match your learning style and pace. Track progress in real-time and adjust goals as you improve.",
         animation: goalData,
     },
     {
         title: "Study & Verify",
-        description: "Use our app, offline time-lapse, or screen recording. AI confirms your effort.",
+        description: "Use our app, offline time-lapse, or screen recording. AI confirms your effort by analyzing your study patterns and validating your focus. Peer reviews further ensure fairness and transparency.",
         animation: studyData,
     },
     {
         title: "Earn EDU Coins",
-        description: "1 hour = 10 EDU Coins. Bonus coins for streaks and quizzes!",
+        description: "1 hour = 10 EDU Coins. Bonus coins for streaks and quizzes! Boost earnings with weekly challenges, group study sessions, and special events. The more you stay consistent, the more you earn.",
         animation: earnData
     },
     {
         title: "Redeem Rewards",
-        description: "Cash out, grab discounts, or unlock NFTs. Your choice!",
+        description: "Cash out, grab discounts, or unlock NFTs. Your choice! Exchange EDU Coins for real-life benefits—gift cards, learning resources, and exclusive NFT badges that showcase your academic milestones.",
         animation: redeemData,
     },
 ];
+
 
 export default function HowItWorks() {
     return (

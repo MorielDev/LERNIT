@@ -1,28 +1,35 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import SecondaryButton from "../components/Buttons/SecondaryButton";
+import cash from "../../public/animations/cash.json";
+import discount from "../../public/animations/discount.json";
+import nft from "../../public/animations/cash.json";
+import gamification from "../../public/animations/gamification.json";
+import Lottie from "lottie-react";
 
 const rewards = [
     {
         title: "💵 Cash",
         description: "Withdraw via Opay, PayPal, or bank transfer.",
-        image: "/images/cash-reward.png",
+        animations: cash,
     },
     {
         title: "🛍️ Discounts",
         description: "20% off Jumia, free MTN data bundles, Coursera coupons.",
-        image: "/images/discounts.png",
+        animations: discount,
     },
     {
         title: "🎖️ NFTs & Certifications",
         description: "Earn tradeable NFTs like 'Blockchain Basics' after 30 hours.",
-        image: "/images/nft-reward.png",
+        animations: cash,
     },
     {
         title: "🔥 Gamification",
         description:
             "Compete on the leaderboard and unlock badges like 'Weekend Warrior'.",
-        image: "/images/gamification.png",
+        animations: gamification,
     },
 ];
 
@@ -30,8 +37,8 @@ export default function Rewards() {
     const [activeTab, setActiveTab] = useState(0);
 
     return (
-        <section className="bg-[#f5f5f0] text-[#452B1F] py-12 px-6">
-            <h2 className="text-4xl font-bold text-center mb-8">💰 What Can You Earn?</h2>
+        <section className="bg-backgroundColor py-12 px-6 h-screen w-full">
+            <h2 className="text-3xl font-bold text-darkGray text-center mb-8">💰 What Can You Earn?</h2>
 
             {/* Tab Navigation */}
             <div className="flex justify-center gap-8 mb-10">
@@ -39,8 +46,8 @@ export default function Rewards() {
                     <button
                         key={index}
                         className={`px-4 py-2 rounded-lg transition ${activeTab === index
-                                ? "bg-[#8B4513] text-white"
-                                : "bg-transparent text-[#452B1F]"
+                            ? "bg-primary text-white"
+                            : "bg-transparent text-primary"
                             }`}
                         onClick={() => setActiveTab(index)}
                     >
@@ -58,19 +65,17 @@ export default function Rewards() {
                 transition={{ duration: 0.5 }}
                 className="text-center max-w-4xl mx-auto"
             >
-                <img
-                    src={rewards[activeTab].image}
-                    alt={rewards[activeTab].title}
-                    className="w-full max-w-md mx-auto mb-6"
-                />
+                <div className="w-12/12 h-[36rem]">
+                    <Lottie animationData={rewards[activeTab].animations} loop={true} style={{ width: '100%', height: '100%' }} />
+                </div>
                 <p className="text-lg">{rewards[activeTab].description}</p>
             </motion.div>
 
             {/* Call to Action */}
-            <div className="flex justify-center mt-12">
-                <button className="bg-[rgba(67,97,238,1)] text-white px-8 py-3 rounded-xl hover:opacity-90 transition-all">
-                    Start Earning Rewards →
-                </button>
+            <div className="w-full flex justify-center items-center mt-10">
+                <SecondaryButton primary={true} placeholder="Start Earning Rewards">
+                    <IoIosArrowRoundForward className="text-xl text-white" />
+                </SecondaryButton>
             </div>
         </section>
     );

@@ -1,6 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+
+import { motion, AnimatePresence } from "framer-motion";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { useState, useEffect } from "react";
 import SecondaryButton from "../components/Buttons/SecondaryButton";
 
 const testimonials = [
@@ -14,53 +16,61 @@ const testimonials = [
         author: "Ada, UNIBEN",
         image: "/images/student-phone.png",
     },
+    {
+        quote: "Watch how easy it is to redeem rewards!",
+        video: "/videos/jumia-redemption.mp4",
+    },
 ];
 
 export default function Testimonials() {
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prev) => (prev + 1) % testimonials.length);
+        }, 5000); // Auto-play every 5 seconds
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
-        <section className="bg-[#f5f5f0] py-16 px-8">
+        <section className="bg-[#f5f5f0] py-16 px-8 flex flex-col items-center h-screen">
             <h2 className="text-4xl font-bold text-center text-[#452B1F] mb-12">
                 🗣️ From Procrastinators to Earners
             </h2>
 
-            {/* Testimonials Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                {testimonials.map((item, index) => (
+            <div className="relative w-full overflow-hidden flex justify-center items-center">
+                <AnimatePresence initial={false} mode="wait">
                     <motion.div
                         key={index}
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.3 }}
-                        className="bg-white p-6 rounded-2xl shadow-lg"
+                        initial={{ x: "100%", opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: "-100%", opacity: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="w-full"
                     >
-                        <p className="text-lg italic mb-4">"{item.quote}"</p>
-                        <p className="font-semibold text-[#8B4513]">{item.author}</p>
-                        <img
-                            src={item.image}
-                            alt={item.author}
-                            className="rounded-lg mt-4"
-                        />
+                        {testimonials[index].video ? (
+                            <div className="p-6 bg-white w-6/12 rounded-2xl shadow-lg">
+                                <p className="text-lg italic mb-4">{testimonials[index].quote}</p>
+                                <video
+                                    src={testimonials[index].video}
+                                    controls
+                                    className="rounded-lg w-full"
+                                />
+                            </div>
+                        ) : (
+                            <div className="p-6 bg-white w-6/12 shadow-lg rounded-2xl flex flex-col justify-center items-center">
+                                <p className="text-lg italic mb-4">"{testimonials[index].quote}"</p>
+                                <p className="font-semibold text-[#8B4513]">{testimonials[index].author}</p>
+                                <img
+                                    src={testimonials[index].image}
+                                    alt={testimonials[index].author}
+                                    className="rounded-lg mt-4"
+                                />
+                            </div>
+                        )}
                     </motion.div>
-                ))}
-
-                {/* Video Testimonial */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.9 }}
-                    className="bg-white p-6 rounded-2xl shadow-lg"
-                >
-                    <p className="text-lg italic mb-4">
-                        "Watch how easy it is to redeem rewards!"
-                    </p>
-                    <video
-                        src="/videos/jumia-redemption.mp4"
-                        controls
-                        className="rounded-lg w-full"
-                    />
-                </motion.div>
+                </AnimatePresence>
             </div>
 
             {/* Call to Action */}

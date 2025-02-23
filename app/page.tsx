@@ -1,6 +1,5 @@
 import Header from "./components/Navigation/Header";
 import HomeSection from "./pages/home";
-import Footer from "./components/Footer";
 import Content from "./components/Content";
 import './globals.css';
 import Content2 from "./components/Content2";
@@ -11,7 +10,9 @@ import Trust from "./components/Trust";
 import HowITWorks from "./pages/how-it-works";
 import Rewards from "./pages/rewards";
 import Testimonials from "./pages/testimonials";
-import FAQ from "./components/FAQ";
+import FAQ from "./pages/faq";
+import Footer from "./pages/footer";
+
 
 export default function Home() {
   return (
