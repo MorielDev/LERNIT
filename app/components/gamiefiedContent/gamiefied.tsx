@@ -27,14 +27,14 @@ export default function GamifiedHook() {
     };
 
     return (
-        <div className="flex flex-col items-start py-6 bg-backgrouncColor">
-            <motion.div animate={controls} className="text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-3xl font-bold text-primary">
+        <div className="flex flex-col items-start py-3 md:py-3 lg:py-4 xl:py-6 2xl:py-6 bg-backgroundColor">
+            <motion.div animate={controls} className="text-xl md:text-xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-bold text-primary">
                 🎓 Join {studentCount.toLocaleString()}+ students already earning!
             </motion.div>
 
             {/* Interactive Calculator */}
-            <div className="mt-4 md:mt-8 lg:mt-8 xl:mt-8 2xl:mt-8 w-full max-w-lg">
-                <label htmlFor="hours" className="block text-lg md: font-medium text-darkGray mb-4">
+            <div className="mt-4 md:mt-4 lg:mt-4 xl:mt-4 2xl:mt-8 w-full max-w-lg">
+                <label htmlFor="hours" className="block text-md md:text-md lg:text-md xl:text-base 2xl:text-lg font-medium text-darkGray mb-4">
                     How many hours do you study per week?
                 </label>
                 <input
@@ -46,8 +46,8 @@ export default function GamifiedHook() {
                     onChange={handleHoursChange}
                     className="w-full cursor-pointer"
                 />
-                <p className="mt-4 text-lg text-darkGray">
-                    📊 Study {studyHours} hours/week = Earn <strong>{eduCoins} EDU Coins/month</strong>
+                <p className="mt-4 text-md md:text-md lg:text-md xl:text-base 2xl:text-lg text-darkGray">
+                    📊 Study {studyHours} hours/week = Earn <strong>{eduCoins} LNT Coins/month</strong>
                 </p>
             </div>
         </div>

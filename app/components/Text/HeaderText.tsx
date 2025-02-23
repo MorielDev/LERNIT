@@ -5,7 +5,7 @@ interface HeaderTextProps {
 export default function HeaderText({ placeholder }: HeaderTextProps) {
     return (
         <>
-            <h2 className="text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl font-bold text-left md:text-center lg:text-center xl:text-center 2xl:text-center text-darkGray">
+            <h2 className="text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-left md:text-left lg:text-left xl:text-left 2xl:text-left text-darkGray">
                 {placeholder}
             </h2>
         </>
