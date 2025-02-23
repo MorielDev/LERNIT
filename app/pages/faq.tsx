@@ -1,71 +1,52 @@
 "use client";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { IoIosArrowRoundForward } from "react-icons/io";
 import SecondaryButton from "../components/Buttons/SecondaryButton";
 import { MdOutlineArrowForward } from "react-icons/md";
 
 
 const faqs = [
-    // Study & Verification Section
     {
         question: "How does Proof-of-Study work?",
-        answer: "AI analyzes screen activity (eye tracking, scroll speed) and cross-checks with peer reviews for offline sessions.",
+        answer: "AI analyzes screen activity, such as eye tracking and scroll speed, to ensure active engagement during online study sessions. For offline work, users can provide evidence through time-lapse videos or peer reviews.",
     },
     {
         question: "What subjects can I study?",
-        answer: "Any subject! From coding and math to language learning—just stay focused and the AI tracks your effort.",
+        answer: "You can study any subject you like! Whether it's computer programming, mathematics, language learning, or even creative arts, our AI system is designed to track your study progress.",
     },
     {
         question: "How do I track my study time?",
-        answer: "Our AI monitors active study sessions and verifies offline work through time-lapse videos or peer reviews.",
+        answer: "Our platform automatically monitors your study sessions through advanced AI tracking mechanisms. For online activities, the AI analyzes your on-screen interactions in real-time.",
     },
-
-    // Earning & Rewards Section
     {
         question: "How many EDU Coins can I earn per day?",
-        answer: "You earn 10 EDU Coins per study hour. Hit streaks and complete quizzes to unlock bonus coins!",
+        answer: "You can earn 10 EDU Coins for every active study hour you complete. Additionally, you can unlock bonus coins by maintaining study streaks or successfully completing quizzes.",
     },
-    // Security & Privacy Section
     {
         question: "Is my study data private?",
-        answer: "Yes! We prioritize privacy. Your data is encrypted and only used to verify your study sessions.",
+        answer: "Absolutely! We place the highest priority on your privacy and security. All user data is encrypted and stored securely, with access restricted to essential verification processes.",
     },
-    // Achievements & Progress Section
     {
         question: "How do streaks work?",
-        answer: "Study consistently to build streaks. A 7-day streak earns bonus EDU Coins and exclusive badges!",
+        answer: "Streaks are built by studying consistently on consecutive days. For instance, maintaining a 7-day study streak earns you additional EDU Coins and exclusive digital badges.",
     },
 ];
 
-
 export default function FAQ() {
-    const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-    const toggleAccordion = (index: number) => {
-        setActiveIndex(activeIndex === index ? null : index);
-    };
-
     return (
-        <section className="bg-backgroundColor py-16 px-20 h-screen">
-            <h2 className="text-4xl font-bold text-center text-darkGray mb-12">
+        <section className="bg-backgroundColor px-20 h-screen flex flex-col justify-evenly items-center">
+            <h2 className="text-4xl font-bold text-center text-darkGray">
                 🧐 Got Questions?
             </h2>
 
-            <div className="w-full space-y-6 grid grid-cols-2 flex justify-between gap-20">
+            <div className="w-full grid grid-cols-2 gap-10">
                 {faqs.map((faq, index) => (
                     <div key={index} className="border-b border-mutedGray border-b-0.5 w-full">
                         <div className="w-full flex flex-row gap-4 py-6">
                             <div className="rounded-xl h-14 w-14 flex items-center justify-center">
-                                <span className="text-lg">
-                                    📌
-                                </span>
+                                <span className="text-lg">📌</span>
                             </div>
-                            <div key={index} className="w-full px-2 h-14 flex flex-col justify-center">
-                                <div className="flex flex-col justify-between h-14 py-1">
-                                    <h1 className="text-black"><span className="font-semibold">{faq.question}</span></h1>
-                                    <h1 className="text-mutedGray font-light text-sm">{faq.answer}</h1>
-                                </div>
+                            <div className="w-full px-2 h-14 flex flex-col justify-center">
+                                <h1 className="text-black font-semibold">{faq.question}</h1>
+                                <h1 className="text-mutedGray font-light text-sm">{faq.answer}</h1>
                             </div>
                         </div>
                     </div>
@@ -73,7 +54,7 @@ export default function FAQ() {
             </div>
 
             {/* Call to Action */}
-            <div className="w-full flex justify-center items-center mt-20">
+            <div className="w-full flex justify-center items-center">
                 <SecondaryButton primary={true} placeholder="📌 Still Have Questions? Contact Us">
                     <MdOutlineArrowForward className="text-xl text-white" />
                 </SecondaryButton>
