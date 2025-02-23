@@ -66,7 +66,7 @@ export default function Testimonials() {
             {/* Call to Action */}
             <div className="w-full flex justify-center items-center mt-12">
                 <SecondaryButton primary={true} placeholder="📌 Join 12,345+ Happy Learners">
-                    <MdOutlineArrowForward className="text-xl text-white" />
+                    <MdOutlineArrowForward className="text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl text-white" />
                 </SecondaryButton>
             </div>
         </section>
