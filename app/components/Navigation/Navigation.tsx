@@ -66,8 +66,8 @@ export default function Header() {
                             key={index}
                             onClick={() => handleScroll(content.link)}
                             className={`text-base md:text-xs lg:text-xs xl:text-base 2xl:text-base font-medium transition-colors duration-300 ${selected === content.link
-                                    ? "text-primary"
-                                    : "text-black hover:text-primary"
+                                ? "text-primary"
+                                : "text-black hover:text-primary"
                                 }`}
                         >
                             {content.title}
@@ -78,10 +78,10 @@ export default function Header() {
                 {/* Action Buttons */}
                 <div className="hidden md:flex space-x-3 md:space-x-1 lg:space-x-1 xl:space-x-2 2xl:space-x-2">
                     <SecondaryButton placeholder="Join the Waitlist" primary={false}>
-                        <MdOutlineArrowOutward className="text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl" />
+                        <MdOutlineArrowOutward className="text-sm md:text-base lg:text-base xl:text-xl 2xl:text-xl" />
                     </SecondaryButton>
                     <SecondaryButton placeholder="Sign In" primary={true}>
-                        <MdOutlineArrowForward className="text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl" />
+                        <MdOutlineArrowForward className="text-sm md:text-base lg:text-base xl:text-xl 2xl:text-xl" />
                     </SecondaryButton>
                 </div>
 
@@ -111,10 +111,10 @@ export default function Header() {
 
                         {/* Mobile Action Buttons */}
                         <SecondaryButton placeholder="Join the Waitlist" primary={false}>
-                            <MdOutlineArrowOutward className="text-xl" />
+                            <MdOutlineArrowOutward className="text-sm md:text-base lg:text-base xl:text-xl 2xl:text-xl" />
                         </SecondaryButton>
                         <SecondaryButton placeholder="Sign In" primary={true}>
-                            <MdOutlineArrowForward className="text-xl" />
+                            <MdOutlineArrowForward className="text-sm md:text-base lg:text-base xl:text-xl 2xl:text-xl" />
                         </SecondaryButton>
                     </div>
                 )}

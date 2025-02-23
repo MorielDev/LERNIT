@@ -6,13 +6,13 @@ export default function Footer() {
     return (
         <footer className="bg-backgroundColor">
             <div className="mx-auto w-full flex flex-col justify-center items-center max-w-screen-xl">
-                <div className="grid grid-cols-2 gap-24 px-4 py-6 lg:py-8 md:grid-cols-4">
+                <div className="grid grid-cols-2 gap-20 md:gap-24 lg:gap-24 xl:gap-24 2xl:gap-24 px-4 py-6 lg:py-8 md:grid-cols-4">
                     {footerSections.map((section) => (
                         <div key={section.title}>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
                                 {section.title}
                             </h2>
-                            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                            <ul className="text-mutedGray text-xs md:text-sm lg:text-sm xl:text-sm 2xl:text-sm font-medium">
                                 {section.links.map((link) => (
                                     <li className="mb-4" key={link.name}>
                                         <a href={link.href} className="hover:underline">
@@ -24,7 +24,7 @@ export default function Footer() {
                         </div>
                     ))}
                 </div>
-                <div className="px-4 py-6 w-full md:flex md:items-center md:flex-col space-y-5 rtl:space-y-reverse">
+                <div className="px-4 py-6 w-full flex flex-col items-center md:flex-col space-y-5 rtl:space-y-reverse">
                     <Logo />
                     <span className="text-sm text-mutedGray sm:text-center">
                         © 2025 <a href="#">Lernit™</a>. All Rights Reserved.
