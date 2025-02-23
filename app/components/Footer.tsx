@@ -3,7 +3,7 @@ import Logo from "./logo/logo";
 export default function Footer() {
   return (
     <div>
-      <footer className="bg-white ">
+      <footer className="bg-backgroundColor">
         <div className="mx-auto w-full flex flex-col justify-center items-center max-w-screen-xl">
           <div className="grid grid-cols-2 gap-24 px-4 py-6 lg:py-8 md:grid-cols-4">
             <div>

@@ -8,6 +8,7 @@ import goalData from '../../public/animations/goal.json';
 import studyData from '../../public/animations/study.json';
 import redeemData from '../../public/animations/reward.json';
 import { IoIosArrowRoundForward } from "react-icons/io";
+import CTAButton from "../components/Buttons/CTAButton";
 
 const steps = [
     {
@@ -69,21 +70,7 @@ export default function HowItWorks() {
             </div>
 
             {/* Call to Action */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                viewport={{ once: true }}
-                className="mt-12 flex justify-center"
-            >
-                <a
-                    href="/signup"
-                    className="flex flex-row gap-2 bg-primary text-white text-sm font-medium py-2.5 px-5 rounded-lg hover:bg-primary transition duration-300"
-                >
-                    Start Earning Today
-                    <IoIosArrowRoundForward className="text-xl" />
-                </a>
-            </motion.div>
+            <CTAButton placeholder="Start Earning Today"/>
         </section>
     );
 }

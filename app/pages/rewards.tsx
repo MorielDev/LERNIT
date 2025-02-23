@@ -8,6 +8,7 @@ import discount from "../../public/animations/discount.json";
 import nft from "../../public/animations/cash.json";
 import gamification from "../../public/animations/gamification.json";
 import Lottie from "lottie-react";
+import { MdOutlineArrowForward } from "react-icons/md";
 
 const rewards = [
     {
@@ -74,7 +75,7 @@ export default function Rewards() {
             {/* Call to Action */}
             <div className="w-full flex justify-center items-center mt-10">
                 <SecondaryButton primary={true} placeholder="Start Earning Rewards">
-                    <IoIosArrowRoundForward className="text-xl text-white" />
+                    <MdOutlineArrowForward className="text-xl text-white" />
                 </SecondaryButton>
             </div>
         </section>

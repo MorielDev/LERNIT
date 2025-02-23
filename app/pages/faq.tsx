@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import SecondaryButton from "../components/Buttons/SecondaryButton";
+import { MdOutlineArrowForward } from "react-icons/md";
 
 
 const faqs = [
@@ -74,7 +75,7 @@ export default function FAQ() {
             {/* Call to Action */}
             <div className="w-full flex justify-center items-center mt-20">
                 <SecondaryButton primary={true} placeholder="📌 Still Have Questions? Contact Us">
-                    <IoIosArrowRoundForward className="text-xl text-white" />
+                    <MdOutlineArrowForward className="text-xl text-white" />
                 </SecondaryButton>
             </div>
         </section>

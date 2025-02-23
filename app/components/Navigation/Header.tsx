@@ -5,6 +5,8 @@ import Button from "../Button";
 import { useState } from "react";
 import PrimaryButton from "../Buttons/PrimaryButton";
 import Logo from "../logo/logo";
+import SecondaryButton from "../Buttons/SecondaryButton";
+import { MdArrowBack, MdArrowBackIos, MdArrowForwardIos, MdOutlineArrowForward, MdOutlineArrowForwardIos, MdOutlineArrowOutward } from "react-icons/md";
 
 export default function Header() {
 
@@ -21,7 +23,7 @@ export default function Header() {
     return (
         <div>
             <header>
-                <nav className="bg-white border-gray-200 ">
+                <nav className="bg-backgroundColor border-gray-200 ">
                     <div className="w-full flex flex-wrap items-center justify-between p-4 px-20">
                         <Link
                             href="https://flowbite.com/"
@@ -47,8 +49,12 @@ export default function Header() {
                             </ul>
                         </div>
                         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                            <PrimaryButton placeholder="Join Waitlist" primary={false} />
-                            <PrimaryButton placeholder="Sign In" primary={true} />
+                            <SecondaryButton placeholder="Join the Waitlist" primary={false}>
+                                <MdOutlineArrowOutward className="text-xl" />
+                            </SecondaryButton>
+                            <SecondaryButton placeholder="Sign In" primary={true}>
+                                <MdOutlineArrowForward className="text-xl" />
+                            </SecondaryButton>
                             <button
                                 data-collapse-toggle="navbar-cta"
                                 type="button"

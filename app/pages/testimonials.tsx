@@ -1,8 +1,10 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { IoIosArrowRoundForward } from "react-icons/io";
-import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import { MdOutlineArrowForward } from "react-icons/md";
 import SecondaryButton from "../components/Buttons/SecondaryButton";
 
 const testimonials = [
@@ -23,60 +25,51 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-    const [index, setIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setIndex((prev) => (prev + 1) % testimonials.length);
-        }, 5000); // Auto-play every 5 seconds
-
-        return () => clearInterval(interval);
-    }, []);
-
     return (
-        <section className="bg-[#f5f5f0] py-16 px-8 flex flex-col items-center h-screen">
+        <section className="bg-[#f5f5f0] py-16 px-8 flex flex-col justify-center items-center h-screen">
             <h2 className="text-4xl font-bold text-center text-[#452B1F] mb-12">
                 🗣️ From Procrastinators to Earners
             </h2>
 
-            <div className="relative w-full overflow-hidden flex justify-center items-center">
-                <AnimatePresence initial={false} mode="wait">
-                    <motion.div
-                        key={index}
-                        initial={{ x: "100%", opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        exit={{ x: "-100%", opacity: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="w-full"
-                    >
-                        {testimonials[index].video ? (
-                            <div className="p-6 bg-white w-6/12 rounded-2xl shadow-lg">
-                                <p className="text-lg italic mb-4">{testimonials[index].quote}</p>
+            <Swiper
+                modules={[Pagination, Autoplay]}
+                spaceBetween={50}
+                slidesPerView={1}
+                loop={true}
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                className="w-full flex justify-center"
+            >
+                {testimonials.map((item, index) => (
+                    <SwiperSlide key={index} className="flex justify-center items-center">
+                        {item.video ? (
+                            <div className="p-6 bg-white w-6/12 rounded-2xl shadow-lg text-center">
+                                <p className="text-lg italic mb-4">{item.quote}</p>
                                 <video
-                                    src={testimonials[index].video}
+                                    src={item.video}
                                     controls
                                     className="rounded-lg w-full"
                                 />
                             </div>
                         ) : (
                             <div className="p-6 bg-white w-6/12 shadow-lg rounded-2xl flex flex-col justify-center items-center">
-                                <p className="text-lg italic mb-4">"{testimonials[index].quote}"</p>
-                                <p className="font-semibold text-[#8B4513]">{testimonials[index].author}</p>
+                                <p className="text-lg italic mb-4">"{item.quote}"</p>
+                                <p className="font-semibold text-[#8B4513]">{item.author}</p>
                                 <img
-                                    src={testimonials[index].image}
-                                    alt={testimonials[index].author}
-                                    className="rounded-lg mt-4"
+                                    src={item.image}
+                                    alt={item.author}
+                                    className="rounded-lg mt-4 w-full"
                                 />
                             </div>
                         )}
-                    </motion.div>
-                </AnimatePresence>
-            </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
 
             {/* Call to Action */}
             <div className="w-full flex justify-center items-center mt-10">
                 <SecondaryButton primary={true} placeholder="📌 Join 12,345+ Happy Learners">
-                    <IoIosArrowRoundForward className="text-xl text-white" />
+                    <MdOutlineArrowForward className="text-xl text-white" />
                 </SecondaryButton>
             </div>
         </section>
