@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Logo from "../logo/logo";
 import SecondaryButton from "../Buttons/SecondaryButton";
 import { MdOutlineArrowForward, MdOutlineArrowOutward } from "react-icons/md";
@@ -20,7 +20,7 @@ export default function Header() {
     ], []);
 
     // Handle smooth scrolling and active link
-    const handleScroll = (id: string) => {
+    const handleScroll = useCallback((id: string) => {
         setSelected(id);
         const section = document.querySelector(id);
         if (section) {
@@ -30,7 +30,7 @@ export default function Header() {
             });
         }
         setIsMobileMenuOpen(false); // Close mobile menu on click
-    };
+    }, []);
 
     // Detect scroll position to update active link
     useEffect(() => {
