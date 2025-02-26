@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { earnAnimation, goalAnimation, studyAnimation } from '../components/animations/animations';
 import Lottie from "lottie-react";
-import { IoIosArrowRoundForward } from "react-icons/io";
 import CTAButton from "../components/Buttons/CTAButton";
 import { steps } from "../data/arrays";
 

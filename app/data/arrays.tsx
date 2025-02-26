@@ -4,7 +4,6 @@ import studyData from '../../public/animations/study.json';
 import redeemData from '../../public/animations/reward.json';
 import cash from "../../public/animations/cash.json";
 import discount from "../../public/animations/discount.json";
-import nft from "../../public/animations/cash.json";
 import gamification from "../../public/animations/gamification.json";
 import { FaDiscord, FaDribbble, FaFacebook, FaGithub, FaXTwitter } from "react-icons/fa6";
 
