@@ -15,7 +15,7 @@ import animationData from "../../public/animations/anim.json";
 import { ModalProps } from "../data/list";
 import TestimonialModal from "../components/modals/TestimonialModal";
 
-export default function HomeSection({ type, setType, open, setOpen }: ModalProps) {
+export default function HomeSection({ type, open, setType = () => {}, setOpen = () => {}  }: ModalProps) {
   return (
     <>
       {open && (

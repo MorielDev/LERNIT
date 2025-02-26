@@ -5,7 +5,7 @@ import HeaderText from "../components/Text/HeaderText";
 import { faqs } from "../data/arrays";
 import { ModalProps } from "../data/list";
 
-export default function FAQ({ setType, setOpen }: ModalProps) {
+export default function FAQ({ setType = () => {}, setOpen = () => {} }: ModalProps) {
   return (
     <section className="bg-backgroundColor px-4 md:px-10 lg:px-10 xl:px-20 2xl:px-20 h-screen flex flex-col justify-evenly items-center pt-0 pb-16">
       <HeaderText placeholder="🧐 Got Questions?" className="text-center" />

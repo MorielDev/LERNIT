@@ -11,7 +11,7 @@ import { testimonials } from "../data/arrays";
 import { ModalProps } from "../data/list";
 import Image from "next/image";
 
-export default function Testimonials({ setType, setOpen }: ModalProps) {
+export default function Testimonials({ setType = () => {}, setOpen = () => {}}: ModalProps) {
   return (
     <section className="bg-backgroundColor px-4 md:px-8 lg:px-8 xl:px-8 2xl:px-8 flex flex-col justify-evenly items-center h-screen pt-8 pb-16">
       <HeaderText
