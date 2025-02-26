@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import PrimaryButton from "../Buttons/PrimaryButton";
+import { useState, useEffect, useMemo } from "react";
 import Logo from "../logo/logo";
 import SecondaryButton from "../Buttons/SecondaryButton";
 import { MdOutlineArrowForward, MdOutlineArrowOutward } from "react-icons/md";
@@ -12,13 +11,13 @@ export default function Header() {
     const [selected, setSelected] = useState<string>("Home");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
-    const NavigationContent = [
+    const NavigationContent = useMemo(() => [
         { title: "Home", link: "#home" },
         { title: "How It Works", link: "#howitworks" },
         { title: "Rewards", link: "#rewards" },
         { title: "Testimonials", link: "#testimonials" },
         { title: "FAQ", link: "#faq" },
-    ];
+    ], []);
 
     // Handle smooth scrolling and active link
     const handleScroll = (id: string) => {
@@ -49,7 +48,7 @@ export default function Header() {
 
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+    }, [NavigationContent]);
 
     return (
         <header className="bg-backgroundColor border-gray-200 fixed top-0 z-50 w-full">

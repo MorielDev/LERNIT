@@ -20,7 +20,7 @@ export default function GamifiedHook() {
         return () => clearInterval(interval);
     }, [controls]);
 
-    const handleHoursChange = (e: any) => {
+    const handleHoursChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const hours = parseInt(e.target.value, 10) || 0;
         setStudyHours(hours);
         setEduCoins(hours * 10);
